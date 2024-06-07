@@ -1,6 +1,7 @@
 CREATE TABLE weather_aqi (
 	city_id SERIAL PRIMARY KEY,
 	city_name varchar(50) NOT NULL,
+	"Date" DATETIME NOT NULL,
 	latitude REAL NOT NULL,
 	longitude REAL NOT NULL,
 	AQI INT NOT NULL,
