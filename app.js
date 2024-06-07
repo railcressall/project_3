@@ -1,32 +1,38 @@
+const express = require('express');
 const { Client } = require('pg');
+const path = require('path');
+
+const app = express();
+const port = 3000;
 
 const client = new Client({
   user: 'postgres',
   host: 'localhost',
   database: 'WeatherAPI',
-  password: 'your pass goes here',
-  port: 5432, 
+  password: 'Soundcloud98',
+  port: 5432,
 });
 
-async function runQueries() {
-    try {
-      await client.connect();
-      console.log('Connected to PostgreSQL database');
-  
-      const lat = await client.query('SELECT latitude FROM weather_aqi');
-      console.log('latitudes:', lat.rows);
-  
-      const lng = await client.query('SELECT longitude FROM weather_aqi');
-      console.log('longitudes:', lng.rows);
-  
-    //   const res3 = await client.query('SELECT * FROM salaries');
-    //   console.log('Data from salaries:', res3.rows);
-    } catch (err) {
-      console.error('Error executing query', err.stack);
-    } finally {
-      await client.end();
-      console.log('Disconnected from PostgreSQL database');
-    }
+// Connect to PostgreSQL database
+client.connect()
+  .then(() => console.log('Connected to PostgreSQL database'))
+  .catch(err => console.error('Error connecting to PostgreSQL database', err.stack));
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// API endpoint to fetch coordinates
+app.get('/api/coordinates', async (req, res) => {
+  try {
+    const result = await client.query('SELECT latitude, longitude FROM weather_aqi');
+    res.json(result.rows);
+  } catch (err) {
+    console.error('Error executing query', err.stack);
+    res.status(500).send('Server error');
   }
-  
-  runQueries();
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server running at http://127.0.0.1:${port}/`);
+});
