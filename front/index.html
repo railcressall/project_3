@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Heat Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+
+    <style>
+        #map {
+            height: 700px;
+            width: 100%;
+        }
+
+        #title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: red
+        }
+
+        #controls {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">Air Quality</h1>
+    <div id="controls">
+        <label for="date-picker">Select Date:</label>
+        <input type="text" id="date-picker" onchange="updateHeatmap()">
+    </div>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
