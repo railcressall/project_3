@@ -19,7 +19,7 @@ DEPLOYMENT - Streamlit:
 Streamlit is an open-source Python library that allows you to create web applications for machine learning, data science, and other analytics tasks with minimal effort. It's designed to make the process of building and sharing data-centric web apps simple and intuitive.
 With Streamlit, you can write Python scripts just like you would for any other data analysis task, but with added commands to create interactive widgets, plots, and visualizations. These scripts can then be run like any other Python script, but instead of just outputting results to the console, Streamlit turns them into interactive web apps that can be accessed through a browser.
 
-  *You will need streamlit, pandas & plotly.express to run streamlit.*
+  *You will need streamlit, pandas, plotly.express & the data csv files in the "back" folder to run streamlit.*
   
   - clone repo to local
   - CD to repo on local 
