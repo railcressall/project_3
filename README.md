@@ -16,6 +16,9 @@ DEPLOYMENT - MAP
   might take longer to populate the database
   
 DEPLOYMENT - Streamlit
+  import streamlit as st
+  import pandas as pd
+  import plotly.express as px
   clone repo to local
   CD to repo on local 
   run 'python -m streamlit run app.py'
