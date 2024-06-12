@@ -26,6 +26,8 @@ With Streamlit, you can write Python scripts just like you would for any other d
   - run 'python -m streamlit run app.py' in terminal. This will tell streamlit to look in your repo folder for the "app.py" file and run the code within it.
 
   Streamlit will open in your browser and you can begin interacting with the data within.
+
+We also got help from chatgpt to build our project.
   
   
   GITPAGE ISSUE
