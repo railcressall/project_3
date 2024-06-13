@@ -128,3 +128,6 @@ elif selected_page == 'All Years':
         st.write('Nov 2022 to Nov 2023 Data')
         selected_city_2022_comp = st.selectbox("Select a city", df_2022['City Name'].unique(), key='2022_comp')
         display_city_data(df_2022, selected_city_2022_comp, 'Nov 2022 to Nov 2023')
+
+# TO RUN IN TERMINAL, OPEN THE FILE PATH OF THE PROJECT, THEN ENTER THIS:
+# python -m streamlit run app.py
